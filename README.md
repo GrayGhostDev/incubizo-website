@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Incubizo Website
+
+A modern, interactive website for Incubizo, a business incubator and innovation hub. This website showcases the services and features of Incubizo using modern web technologies.
+
+## Technologies Used
+
+- **Next.js 14**: React framework for server-side rendering and static site generation
+- **TypeScript**: For type-safe code
+- **Tailwind CSS**: For utility-first styling
+- **shadcn/ui**: For beautiful, accessible UI components
+- **HTMX**: For interactive elements without heavy JavaScript
+- **Three.js**: For 3D elements and animations
+- **Framer Motion**: For smooth animations and transitions
+
+## Features
+
+- Modern, responsive design
+- Interactive 3D hero section
+- HTMX-powered interactive components
+- Server-side rendering for improved performance
+- Accessible UI components
+- Contact form with validation
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.17 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/incubizo-website.git
+cd incubizo-website
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/`: Next.js app directory containing pages and API routes
+- `components/`: React components
+- `lib/`: Utility functions and helpers
+- `public/`: Static assets
 
-## Learn More
+## API Routes
 
-To learn more about Next.js, take a look at the following resources:
+The website includes several API routes for HTMX interactions:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/api/features/[id]`: Returns details for a specific feature
+- `/api/testimonials`: Returns testimonials
+- `/api/testimonials/[index]`: Returns a specific testimonial
+- `/api/contact`: Handles contact form submissions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## HTMX Integration
 
-## Deploy on Vercel
+This project uses HTMX for interactive elements without heavy JavaScript. The HTMX integration is handled through:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Custom utility functions in `lib/htmx-utils.ts`
+- API routes that return HTML fragments
+- Client-side initialization in components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The website can be deployed to any platform that supports Next.js, such as Vercel, Netlify, or a custom server.
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Adding the Workspace Image
+
+The website includes a workspace showcase section that displays an image of the Incubizo workspace with a laptop and branded mug. To add this image:
+
+1. Save the image as `workspace-image.jpg` in the `public/images` directory
+2. Alternatively, run the provided script to download the image:
+
+```bash
+./save-image.sh
+```
