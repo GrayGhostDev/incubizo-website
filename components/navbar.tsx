@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
 import Logo3D from "@/components/logo-3d";
+import { siteConfig } from "@/lib/site-config";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = () => {
           <div className="mr-2">
             <Logo3D size={50} isInteractive={false} />
           </div>
-          <span className="text-2xl font-bold text-primary">Incubizo</span>
+          <span className="text-2xl font-bold text-primary">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop Navigation */}
