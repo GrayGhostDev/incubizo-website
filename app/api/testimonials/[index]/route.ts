@@ -66,10 +66,14 @@ function generateTestimonialHTML(testimonial: typeof testimonials[0], activeInde
   `;
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { index: string } }
-) {
+// Define the correct type for the params
+type Params = {
+  params: {
+    index: string;
+  };
+};
+
+export async function GET(request: NextRequest, { params }: Params) {
   const indexParam = params.index;
   
   // Handle special cases for prev/next

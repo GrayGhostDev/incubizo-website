@@ -72,10 +72,14 @@ const features = [
   }
 ];
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+// Define the correct type for the params
+type Params = {
+  params: {
+    id: string;
+  };
+};
+
+export async function GET(request: NextRequest, { params }: Params) {
   const id = params.id;
   
   // Find the feature by ID
